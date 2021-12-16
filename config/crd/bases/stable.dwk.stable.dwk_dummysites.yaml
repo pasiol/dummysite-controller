@@ -1,0 +1,63 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: dummysites.stable.dwk.stable.dwk
+spec:
+  group: stable.dwk.stable.dwk
+  names:
+    kind: DummySite
+    listKind: DummySiteList
+    plural: dummysites
+    singular: dummysite
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: DummySite is the Schema for the dummysites API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DummySiteSpec defines the desired state of DummySite
+            properties:
+              image:
+                type: string
+              name:
+                type: string
+              succeed:
+                type: boolean
+              website_url:
+                description: Foo is an example field of DummySite. Edit dummysite_types.go
+                  to remove/update
+                type: string
+            type: object
+          status:
+            description: DummySiteStatus defines the observed state of DummySite
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

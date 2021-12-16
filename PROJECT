@@ -1,0 +1,16 @@
+domain: stable.dwk
+layout:
+- go.kubebuilder.io/v3
+projectName: dummysite-controller
+repo: stable.dwk
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: stable.dwk
+  group: stable.dwk
+  kind: DummySite
+  path: stable.dwk/api/v1
+  version: v1
+version: "3"
